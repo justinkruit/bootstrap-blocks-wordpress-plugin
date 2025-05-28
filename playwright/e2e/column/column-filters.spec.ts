@@ -1,6 +1,6 @@
 import { openSidebarPanelWithTitle } from '../../commands/open-sidebar-panel-with-title';
 
-const { test, expect } = require( '@wordpress/e2e-test-utils-playwright' );
+import { test, expect } from '@wordpress/e2e-test-utils-playwright';
 
 test.describe( 'Column Block - Filters', () => {
 	test.beforeAll( async ( { requestUtils } ) => {

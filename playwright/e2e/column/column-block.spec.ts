@@ -1,4 +1,4 @@
-const { test, expect } = require( '@wordpress/e2e-test-utils-playwright' );
+import { test, expect } from '@wordpress/e2e-test-utils-playwright';
 
 test.describe( 'Column Block', () => {
 	test.beforeEach( async ( { admin, editor, page } ) => {
@@ -17,7 +17,6 @@ test.describe( 'Column Block', () => {
 	} );
 
 	test( 'Column block is initialized with default attributes', async ( {
-		editor,
 		page,
 	} ) => {
 		// Check if default values are set in data attributes
@@ -268,7 +267,7 @@ test.describe( 'Column Block', () => {
 } );
 
 test.describe( 'Column Block - Block inserter', () => {
-	test.beforeEach( async ( { admin, editor } ) => {
+	test.beforeEach( async ( { admin } ) => {
 		await admin.createNewPost();
 	} );
 
