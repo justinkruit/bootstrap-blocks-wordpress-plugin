@@ -1,27 +1,21 @@
 {
-	"name": "liip/wp-bootstrap-blocks",
+	"name": "tschortsch/wp-bootstrap-blocks",
 	"description": "Bootstrap Gutenberg Blocks for WordPress",
 	"type": "wordpress-plugin",
 	"license": "GPL-2.0",
-	"homepage": "https://github.com/liip/bootstrap-blocks-wordpress-plugin",
+	"homepage": "https://github.com/tschortsch/bootstrap-blocks-wordpress-plugin",
 	"authors": [
 		{
-			"name": "Liip AG",
-			"email": "contact@liip.ch",
-			"homepage": "https://liip.ch/",
-			"role": "Developer"
-		},
-		{
 			"name": "Juerg Hunziker",
-			"email": "juerg.hunziker@liip.ch",
+			"email": "juerg.hunziker@gmail.com",
 			"role": "Developer"
 		}
 	],
 	"support": {
-		"source": "https://github.com/liip/bootstrap-blocks-wordpress-plugin",
-		"docs": "https://github.com/liip/bootstrap-blocks-wordpress-plugin",
-		"issues": "https://github.com/liip/bootstrap-blocks-wordpress-plugin/issues",
-		"email": "contact@liip.ch"
+		"source": "https://github.com/tschortsch/bootstrap-blocks-wordpress-plugin",
+		"docs": "https://github.com/tschortsch/bootstrap-blocks-wordpress-plugin",
+		"issues": "https://github.com/tschortsch/bootstrap-blocks-wordpress-plugin/issues",
+		"email": "juerg.hunziker@gmail.com"
 	},
 	"require-dev": {
 		"squizlabs/php_codesniffer": "^3.7",

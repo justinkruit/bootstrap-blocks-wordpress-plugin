@@ -3,7 +3,7 @@
   "version": "5.2.0",
   "private": true,
   "description": "Bootstrap Gutenberg Blocks for WordPress",
-  "author": "Liip AG",
+  "author": "Jürg Hunziker",
   "license": "GPL-2.0-or-later",
   "keywords": [
     "WordPress",
@@ -12,10 +12,10 @@
     "Bootstrap",
     "Blocks"
   ],
-  "homepage": "https://github.com/liip/bootstrap-blocks-wordpress-plugin",
-  "repository": "git+https://github.com/liip/bootstrap-blocks-wordpress-plugin.git",
+  "homepage": "https://github.com/tschortsch/bootstrap-blocks-wordpress-plugin",
+  "repository": "git+https://github.com/tschortsch/bootstrap-blocks-wordpress-plugin.git",
   "bugs": {
-    "url": "https://github.com/liip/bootstrap-blocks-wordpress-plugin/issues"
+    "url": "https://github.com/tschortsch/bootstrap-blocks-wordpress-plugin/issues"
   },
   "dependencies": {
     "@wordpress/block-editor": "^12.14.0",

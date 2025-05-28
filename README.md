@@ -1,6 +1,6 @@
 # Bootstrap Gutenberg Blocks for WordPress
 
-[![Build Status](https://github.com/liip/bootstrap-blocks-wordpress-plugin/workflows/Lint%20Test%20Deploy/badge.svg?branch=master)](https://github.com/liip/bootstrap-blocks-wordpress-plugin/actions?query=workflow%3A%22Lint+Test+Deploy%22+branch%3Amaster)
+[![Build Status](https://github.com/tschortsch/bootstrap-blocks-wordpress-plugin/workflows/Lint%20Test%20Deploy/badge.svg?branch=master)](https://github.com/tschortsch/bootstrap-blocks-wordpress-plugin/actions?query=workflow%3A%22Lint+Test+Deploy%22+branch%3Amaster)
 
 Bootstrap Gutenberg Blocks for WordPress. This plugin adds Bootstrap components and layout options as Gutenberg blocks.
 
@@ -56,10 +56,10 @@ Bootstrap Gutenberg Blocks for WordPress. This plugin adds Bootstrap components 
 
 ## Further Information
 
-* Documentation: [https://github.com/liip/bootstrap-blocks-wordpress-plugin](https://github.com/liip/bootstrap-blocks-wordpress-plugin)
+* Documentation: [https://github.com/tschortsch/bootstrap-blocks-wordpress-plugin](https://github.com/tschortsch/bootstrap-blocks-wordpress-plugin)
 * WordPress Plugin: [https://wordpress.org/plugins/wp-bootstrap-blocks](https://wordpress.org/plugins/wp-bootstrap-blocks)
-* Changelog: [https://github.com/liip/bootstrap-blocks-wordpress-plugin/releases](https://github.com/liip/bootstrap-blocks-wordpress-plugin/releases)
-* Issue tracker: [https://github.com/liip/bootstrap-blocks-wordpress-plugin/issues](https://github.com/liip/bootstrap-blocks-wordpress-plugin/issues)
+* Changelog: [https://github.com/tschortsch/bootstrap-blocks-wordpress-plugin/releases](https://github.com/tschortsch/bootstrap-blocks-wordpress-plugin/releases)
+* Issue tracker: [https://github.com/tschortsch/bootstrap-blocks-wordpress-plugin/issues](https://github.com/tschortsch/bootstrap-blocks-wordpress-plugin/issues)
 
 ## Supported Bootstrap versions
 

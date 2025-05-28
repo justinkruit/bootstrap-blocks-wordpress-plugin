@@ -1,4 +1,4 @@
-# Copyright (C) 2023 Liip AG
+# Copyright (C) 2025 Jürg Hunziker
 # This file is distributed under the GPL2+.
 msgid ""
 msgstr ""

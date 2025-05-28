@@ -14,7 +14,7 @@ HERE="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 # Set SVN_PASSWORD environment variable to not prompt password during deployment
 PLUGINSLUG="wp-bootstrap-blocks"
 SVNURL="https://plugins.svn.wordpress.org/$PLUGINSLUG"
-SVN_USERNAME=liip
+SVN_USERNAME=tschortsch
 SOURCEPATH="$HERE/.." # this file should be in the base of your git repository
 RELEASEPATH="$SOURCEPATH/release"
 MAINFILE="$PLUGINSLUG.php"
