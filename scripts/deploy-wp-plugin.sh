@@ -58,6 +58,15 @@ elif [ "$PLUGINVERSION" = "$READMEVERSION" ]; then
 fi
 
 echo
+echo "Install svn if not installed yet ..."
+# Check if SVN is installed
+if ! command -v svn &> /dev/null
+then
+    echo "Subversion (svn) is not installed. Installing..."
+    sudo apt-get update && sudo apt-get install -y subversion
+fi
+
+echo
 echo "Creating local copy of SVN repo trunk ..."
 svn checkout $SVNURL $RELEASEPATH --depth immediates
 svn update --quiet $RELEASEPATH/trunk --set-depth infinity
