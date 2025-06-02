@@ -17,9 +17,6 @@
   "bugs": {
     "url": "https://github.com/tschortsch/bootstrap-blocks-wordpress-plugin/issues"
   },
-  "engines": {
-    "node": ">=22"
-  },
   "dependencies": {
     "@wordpress/block-editor": "^12.14.0",
     "@wordpress/blocks": "^12.23.0",

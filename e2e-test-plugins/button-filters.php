@@ -2,8 +2,8 @@
 /**
  * Plugin Name: wp-bootstrap-blocks-test-button-filters
  * Description: [FOR TESTING PURPOSES ONLY] Plugin to test button filters.
- * Plugin URI: https://github.com/liip/bootstrap-blocks-wordpress-plugin
- * Author: Liip AG
+ * Plugin URI: https://github.com/tschortsch/bootstrap-blocks-wordpress-plugin
+ * Author: Jürg Hunziker
  *
  * @package wp-bootstrap-blocks-test-button-filters
  */
@@ -32,10 +32,10 @@ add_action( 'init', 'enqueue_button_filters_plugin_script' );
  * @return array
  */
 function button_filters_default_attributes( $default_attributes ) {
-	$default_attributes['url'] = 'https://liip.ch';
+	$default_attributes['url'] = 'https://juerghunziker.ch';
 	$default_attributes['linkTarget'] = '_blank';
 	$default_attributes['rel'] = 'custom rel';
-	$default_attributes['text'] = 'Liip';
+	$default_attributes['text'] = 'Jürg Hunziker';
 	$default_attributes['style'] = 'secondary';
 	$default_attributes['alignment'] = 'center';
 	return $default_attributes;
