@@ -5,7 +5,7 @@
  * Description: Bootstrap Gutenberg Blocks for WordPress.
  * Author: Jürg Hunziker
  * Author URI: https://juerghunziker.ch
- * Version: 5.2.0
+ * Version: 5.2.1
  * License: GPL2+
  * License URI: https://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain: wp-bootstrap-blocks

@@ -5,7 +5,7 @@ Tags: gutenberg, blocks, bootstrap
 Requires at least: 5.3
 Tested up to: 6.8
 Requires PHP: 5.6
-Stable tag: 5.2.0
+Stable tag: 5.2.1
 License: GPLv2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -142,6 +142,10 @@ Please create a new GitHub issue and let us know: [https://github.com/tschortsch
 1. Container block
 
 == Changelog ==
+
+= 5.2.1 =
+
+* [COMPATIBILITY] Tested up to WordPress 6.8.
 
 = 5.2.0 =
 
