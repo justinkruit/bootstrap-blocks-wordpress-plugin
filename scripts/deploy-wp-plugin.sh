@@ -1,5 +1,5 @@
 #! /bin/bash
-# Author: Juerg Hunziker <juerg.hunziker@liip.ch>
+# Author: Juerg Hunziker
 #
 # This script has been created based on the wordpress-plugin-git-flow-svn-deploy script from Gary Jones (Thx!).
 # See https://github.com/GaryJones/wordpress-plugin-git-flow-svn-deploy for instructions and credits.

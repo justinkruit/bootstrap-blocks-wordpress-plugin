@@ -2,8 +2,8 @@
 /**
  * Plugin Name: wp-bootstrap-blocks-test-container-filters
  * Description: [FOR TESTING PURPOSES ONLY] Plugin to test container filters.
- * Plugin URI: https://github.com/liip/bootstrap-blocks-wordpress-plugin
- * Author: Liip AG
+ * Plugin URI: https://github.com/tschortsch/bootstrap-blocks-wordpress-plugin
+ * Author: Jürg Hunziker
  *
  * @package wp-bootstrap-blocks-test-container-filters
  */

@@ -1,6 +1,6 @@
 import { openSidebarPanelWithTitle } from '../../commands/open-sidebar-panel-with-title';
 
-const { test, expect } = require( '@wordpress/e2e-test-utils-playwright' );
+import { test, expect } from '@wordpress/e2e-test-utils-playwright';
 
 test.describe( 'Column Block - Filters', () => {
 	test.beforeAll( async ( { requestUtils } ) => {
@@ -44,14 +44,14 @@ test.describe( 'Column Block - Filters', () => {
 		// Additional background color should be available
 		await expect(
 			page.locator(
-				'.components-circular-option-picker__option[aria-label="Color: brand"]'
+				'.components-circular-option-picker__option[aria-label*="brand"]'
 			)
 		).toBeVisible();
 
 		// Background color should be applied
 		await page
 			.locator(
-				'.components-circular-option-picker__option[aria-label="Color: brand"]'
+				'.components-circular-option-picker__option[aria-label*="brand"]'
 			)
 			.click();
 

@@ -1,6 +1,6 @@
 import { editorSettingsSelectOption } from '../../commands/editor-settings-select-option';
 
-const { test, expect } = require( '@wordpress/e2e-test-utils-playwright' );
+import { test, expect } from '@wordpress/e2e-test-utils-playwright';
 
 test.describe( 'Button Block', () => {
 	test.beforeEach( async ( { admin, editor } ) => {
@@ -27,10 +27,10 @@ test.describe( 'Button Block', () => {
 			.locator(
 				'[aria-label="Add text..."].block-editor-rich-text__editable'
 			)
-			.fill( 'Liip' );
+			.fill( 'Jürg Hunziker' );
 		await page
 			.locator( 'input[aria-label="URL"]' )
-			.fill( 'https://liip.ch' );
+			.fill( 'https://juerghunziker.ch' );
 
 		expect( await editor.getEditedPostContent() ).toMatchSnapshot(
 			'set-link-url-and-text.txt'

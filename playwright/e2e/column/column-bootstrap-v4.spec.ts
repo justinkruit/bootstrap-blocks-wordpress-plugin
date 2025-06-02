@@ -1,4 +1,4 @@
-const { test, expect } = require( '@wordpress/e2e-test-utils-playwright' );
+import { test, expect } from '@wordpress/e2e-test-utils-playwright';
 
 test.describe( 'Column Block - Bootstrap 4', () => {
 	test.beforeAll( async ( { requestUtils } ) => {
@@ -29,7 +29,6 @@ test.describe( 'Column Block - Bootstrap 4', () => {
 	} );
 
 	test( 'Xxl breakpoint options are not displayed if run with Bootstrap 4', async ( {
-		editor,
 		page,
 	} ) => {
 		await page

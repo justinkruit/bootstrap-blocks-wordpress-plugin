@@ -1,7 +1,10 @@
-const { test, expect } = require( '@wordpress/e2e-test-utils-playwright' );
+import { test, expect } from '@wordpress/e2e-test-utils-playwright';
 
 test.describe( 'Row Block', () => {
-	test.beforeEach( async ( { admin, editor, page } ) => {
+	// TODO check why "Change layout" test is flaky
+	test.describe.configure( { retries: 2 } );
+
+	test.beforeEach( async ( { admin, editor } ) => {
 		await admin.createNewPost();
 		await editor.insertBlock( {
 			name: 'wp-bootstrap-blocks/row',

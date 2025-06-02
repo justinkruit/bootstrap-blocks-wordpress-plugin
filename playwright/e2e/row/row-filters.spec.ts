@@ -1,4 +1,4 @@
-const { test, expect } = require( '@wordpress/e2e-test-utils-playwright' );
+import { test, expect } from '@wordpress/e2e-test-utils-playwright';
 
 test.describe( 'Row Block Filters', () => {
 	test.beforeAll( async ( { requestUtils } ) => {
@@ -13,7 +13,7 @@ test.describe( 'Row Block Filters', () => {
 		);
 	} );
 
-	test.beforeEach( async ( { admin, editor, page } ) => {
+	test.beforeEach( async ( { admin, editor } ) => {
 		await admin.createNewPost();
 		await editor.insertBlock( {
 			name: 'wp-bootstrap-blocks/row',
@@ -54,14 +54,13 @@ test.describe( 'Row Block Filters', () => {
 
 	test( 'wpBootstrapBlocks.row.enableCustomTemplate disables custom template', async ( {
 		page,
-		editor,
 	} ) => {
 		// Additional template should be available
 		await expect(
 			await page.$$( '.wp-bootstrap-blocks-template-selector-button' )
 		).toHaveLength( 5 ); // 4 default templates + 1 additional template (custom template disabled)
 		await expect(
-			await page.locator(
+			page.locator(
 				'.wp-bootstrap-blocks-template-selector-button > button[aria-label="Custom"]'
 			)
 		).not.toBeVisible();

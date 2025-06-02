@@ -1,4 +1,4 @@
-const { test, expect } = require( '@wordpress/e2e-test-utils-playwright' );
+import { test, expect } from '@wordpress/e2e-test-utils-playwright';
 
 test.describe( 'Row Block - Bootstrap 4', () => {
 	test.beforeAll( async ( { requestUtils } ) => {
@@ -13,7 +13,7 @@ test.describe( 'Row Block - Bootstrap 4', () => {
 		);
 	} );
 
-	test.beforeEach( async ( { admin, editor, page } ) => {
+	test.beforeEach( async ( { admin, editor } ) => {
 		await admin.createNewPost();
 		await editor.insertBlock( {
 			name: 'wp-bootstrap-blocks/row',

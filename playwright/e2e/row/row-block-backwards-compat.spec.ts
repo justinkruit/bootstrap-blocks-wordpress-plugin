@@ -4,10 +4,10 @@ import rowContent140 from './fixtures/row-1.4.0';
 import rowContentBootstrap5 from './fixtures/row-bootstrap5';
 import rowContent320CenterContent from './fixtures/row-3.2.0-center-content';
 
-const { test, expect } = require( '@wordpress/e2e-test-utils-playwright' );
+import { test, expect } from '@wordpress/e2e-test-utils-playwright';
 
 test.describe( 'Row Block - Backwards compatibility', () => {
-	test.beforeEach( async ( { admin, editor, page } ) => {
+	test.beforeEach( async ( { admin, editor } ) => {
 		await admin.createNewPost();
 		await editor.insertBlock( {
 			name: 'wp-bootstrap-blocks/row',
@@ -135,7 +135,7 @@ test.describe( 'Row Block - Backwards compatibility Bootstrap 4', () => {
 		);
 	} );
 
-	test.beforeEach( async ( { admin, editor, page } ) => {
+	test.beforeEach( async ( { admin, editor } ) => {
 		await admin.createNewPost();
 		await editor.insertBlock( {
 			name: 'wp-bootstrap-blocks/row',
