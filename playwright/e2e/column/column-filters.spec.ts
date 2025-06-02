@@ -44,14 +44,14 @@ test.describe( 'Column Block - Filters', () => {
 		// Additional background color should be available
 		await expect(
 			page.locator(
-				'.components-circular-option-picker__option[aria-label="Color: brand"]'
+				'.components-circular-option-picker__option[aria-label*="brand"]'
 			)
 		).toBeVisible();
 
 		// Background color should be applied
 		await page
 			.locator(
-				'.components-circular-option-picker__option[aria-label="Color: brand"]'
+				'.components-circular-option-picker__option[aria-label*="brand"]'
 			)
 			.click();
 

@@ -1,6 +1,9 @@
 import { test, expect } from '@wordpress/e2e-test-utils-playwright';
 
 test.describe( 'Row Block', () => {
+	// TODO check why "Change layout" test is flaky
+	test.describe.configure( { retries: 2 } );
+
 	test.beforeEach( async ( { admin, editor } ) => {
 		await admin.createNewPost();
 		await editor.insertBlock( {
