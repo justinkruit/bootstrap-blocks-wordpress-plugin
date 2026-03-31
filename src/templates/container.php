@@ -43,9 +43,6 @@ if ( array_key_exists( 'isFluid', $attributes ) && $attributes['isFluid'] ) {
 if ( array_key_exists( 'marginAfter', $attributes ) && ! empty( $attributes['marginAfter'] ) ) {
 	array_push( $classes, $attributes['marginAfter'] );
 }
-if ( array_key_exists( 'className', $attributes ) && ! empty( $attributes['className'] ) ) {
-	array_push( $classes, $attributes['className'] );
-}
 
 /**
  * Filters container block classes.
@@ -57,6 +54,6 @@ if ( array_key_exists( 'className', $attributes ) && ! empty( $attributes['class
  */
 $classes = apply_filters( 'wp_bootstrap_blocks_container_classes', $classes, $attributes );
 ?>
-<div class="<?php echo esc_attr( implode( ' ', $classes ) ); ?>">
+<div <?php echo get_block_wrapper_attributes( array( 'class' => implode( ' ', $classes ) ) ); ?>>
 	<?php echo $content; // phpcs:ignore ?>
 </div>

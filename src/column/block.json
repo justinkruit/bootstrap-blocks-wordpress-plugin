@@ -1,6 +1,6 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
-	"apiVersion": 1,
+	"apiVersion": 3,
 	"name": "wp-bootstrap-blocks/column",
 	"title": "Column",
 	"category": "wp-bootstrap-blocks",
@@ -11,5 +11,6 @@
 	],
 	"parent": ["wp-bootstrap-blocks/row"],
 	"textdomain": "wp-bootstrap-blocks",
+	"editorStyle": "wp-bootstrap-blocks-editor-styles",
 	"version": "5.0.0"
 }

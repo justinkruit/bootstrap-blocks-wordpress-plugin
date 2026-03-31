@@ -15,6 +15,8 @@ import {
 	InspectorControls,
 	BlockControls,
 	AlignmentToolbar,
+	useBlockProps,
+	useInnerBlocksProps,
 } from '@wordpress/block-editor';
 
 import {
@@ -283,7 +285,6 @@ const getColumnsTemplateLock = ( templateName ) => {
 };
 
 const BootstrapRowEdit = ( {
-	className,
 	clientId,
 	attributes,
 	setAttributes,
@@ -365,6 +366,20 @@ const BootstrapRowEdit = ( {
 			align: 'bottom',
 		},
 	];
+
+	const blockProps = useBlockProps( {
+		'data-alignment': alignment,
+		'data-vertical-alignment': verticalAlignment,
+		'data-editor-stack-columns': editorStackColumns,
+		'data-no-gutters': noGutters,
+		'data-horizontal-gutters': horizontalGutters,
+	} );
+	const innerBlocksProps = useInnerBlocksProps( blockProps, {
+		allowedBlocks: ALLOWED_BLOCKS,
+		template: getColumnsTemplate( selectedTemplateName ),
+		templateLock: getColumnsTemplateLock( selectedTemplateName ),
+		orientation: 'horizontal',
+	} );
 
 	return (
 		<>
@@ -506,16 +521,7 @@ const BootstrapRowEdit = ( {
 					</>
 				) }
 			</BlockControls>
-			<div className={ className }>
-				<InnerBlocks
-					allowedBlocks={ ALLOWED_BLOCKS }
-					template={ getColumnsTemplate( selectedTemplateName ) }
-					templateLock={ getColumnsTemplateLock(
-						selectedTemplateName
-					) }
-					orientation="horizontal"
-				/>
-			</div>
+			<div { ...innerBlocksProps } />
 		</>
 	);
 };

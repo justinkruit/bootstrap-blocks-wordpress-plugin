@@ -7,7 +7,7 @@ import {
 } from '@wordpress/components';
 import { useSelect } from '@wordpress/data';
 import { applyFilters } from '@wordpress/hooks';
-import { InnerBlocks, InspectorControls } from '@wordpress/block-editor';
+import { InnerBlocks, InspectorControls, useBlockProps, useInnerBlocksProps } from '@wordpress/block-editor';
 
 import { isBootstrap5Active } from '../helper';
 
@@ -77,7 +77,6 @@ fluidBreakpointOptions = [
 
 const BootstrapContainerEdit = ( {
 	attributes,
-	className,
 	clientId,
 	setAttributes,
 } ) => {
@@ -88,6 +87,13 @@ const BootstrapContainerEdit = ( {
 		return {
 			hasChildBlocks: getBlockOrder( clientId ).length > 0,
 		};
+	} );
+
+	const blockProps = useBlockProps();
+	const innerBlocksProps = useInnerBlocksProps( blockProps, {
+		renderAppender: hasChildBlocks
+			? undefined
+			: InnerBlocks.ButtonBlockAppender,
 	} );
 
 	return (
@@ -133,15 +139,7 @@ const BootstrapContainerEdit = ( {
 					/>
 				</PanelBody>
 			</InspectorControls>
-			<div className={ className }>
-				<InnerBlocks
-					renderAppender={
-						hasChildBlocks
-							? undefined
-							: () => <InnerBlocks.ButtonBlockAppender />
-					}
-				/>
-			</div>
+			<div { ...innerBlocksProps } />
 		</>
 	);
 };

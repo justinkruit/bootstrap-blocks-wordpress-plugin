@@ -30,9 +30,6 @@ if ( array_key_exists( 'alignment', $attributes ) && ! empty( $attributes['align
 	array_push( $classes, ( 'text-' . $attributes['alignment'] ) );
 }
 
-if ( array_key_exists( 'className', $attributes ) && ! empty( $attributes['className'] ) ) {
-	array_push( $btn_classes, $attributes['className'] );
-}
 if ( array_key_exists( 'style', $attributes ) && ! empty( $attributes['style'] ) ) {
 	array_push( $btn_classes, 'btn-' . $attributes['style'] );
 } else {
@@ -59,7 +56,7 @@ $classes = apply_filters( 'wp_bootstrap_blocks_button_wrapper_classes', $classes
  */
 $btn_classes = apply_filters( 'wp_bootstrap_blocks_button_classes', $btn_classes, $attributes );
 ?>
-<div class="<?php echo esc_attr( implode( ' ', $classes ) ); ?>">
+<div <?php echo get_block_wrapper_attributes( array( 'class' => implode( ' ', $classes ) ) ); ?>>
 	<a
 		href="<?php echo esc_url( $attributes['url'] ); ?>"
 		<?php if ( ! empty( $attributes['linkTarget'] ) ) : ?>

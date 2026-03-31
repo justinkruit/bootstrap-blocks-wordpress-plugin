@@ -32,16 +32,6 @@ registerBlockType( 'wp-bootstrap-blocks/row', {
 
 	// attributes are defined server side with register_block_type(). This is needed to make default attributes available in the blocks render callback.
 
-	getEditWrapperProps( attributes ) {
-		return {
-			'data-alignment': attributes.alignment,
-			'data-vertical-alignment': attributes.verticalAlignment,
-			'data-editor-stack-columns': attributes.editorStackColumns,
-			'data-no-gutters': attributes.noGutters,
-			'data-horizontal-gutters': attributes.horizontalGutters,
-		};
-	},
-
 	edit,
 
 	save() {

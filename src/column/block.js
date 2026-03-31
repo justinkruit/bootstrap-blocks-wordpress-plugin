@@ -7,7 +7,7 @@ import { registerBlockType } from '@wordpress/blocks';
 import { __ } from '@wordpress/i18n';
 import { InnerBlocks } from '@wordpress/block-editor';
 
-import edit, { bgColorOptions } from './edit';
+import edit from './edit';
 import { column } from '../icons';
 
 registerBlockType( 'wp-bootstrap-blocks/column', {
@@ -23,71 +23,6 @@ registerBlockType( 'wp-bootstrap-blocks/column', {
 	parent: [ 'wp-bootstrap-blocks/row' ],
 
 	// attributes are defined server side with register_block_type(). This is needed to make default attributes available in the blocks render callback.
-
-	getEditWrapperProps( attributes ) {
-		const {
-			sizeXxl,
-			sizeXl,
-			sizeLg,
-			sizeMd,
-			sizeSm,
-			sizeXs,
-			equalWidthXxl,
-			equalWidthXl,
-			equalWidthLg,
-			equalWidthMd,
-			equalWidthSm,
-			equalWidthXs,
-			bgColor,
-			padding,
-			contentVerticalAlignment,
-		} = attributes;
-
-		// Prepare styles for selected background-color
-		let style = {};
-		if ( bgColor ) {
-			const selectedBgColor = bgColorOptions.find(
-				( bgColorOption ) => bgColorOption.name === bgColor
-			);
-			if ( selectedBgColor ) {
-				style = {
-					backgroundColor: selectedBgColor.color,
-				};
-			}
-		}
-
-		return {
-			'data-size-xs':
-				equalWidthXxl ||
-				equalWidthXl ||
-				equalWidthLg ||
-				equalWidthMd ||
-				equalWidthSm ||
-				equalWidthXs
-					? 0
-					: sizeXs,
-			'data-size-sm':
-				equalWidthXxl ||
-				equalWidthXl ||
-				equalWidthLg ||
-				equalWidthMd ||
-				equalWidthSm
-					? 0
-					: sizeSm,
-			'data-size-md':
-				equalWidthXxl || equalWidthXl || equalWidthLg || equalWidthMd
-					? 0
-					: sizeMd,
-			'data-size-lg':
-				equalWidthXxl || equalWidthXl || equalWidthLg ? 0 : sizeLg,
-			'data-size-xl': equalWidthXxl || equalWidthXl ? 0 : sizeXl,
-			'data-size-xxl': equalWidthXxl ? 0 : sizeXxl,
-			'data-bg-color': bgColor,
-			'data-padding': padding,
-			'data-content-vertical-alignment': contentVerticalAlignment,
-			style,
-		};
-	},
 
 	edit,
 

@@ -120,6 +120,9 @@ class WP_Bootstrap_Blocks {
 	 * Initializes hooks.
 	 */
 	protected function init_hooks() {
+		// Hook: Register block assets early so block.json editorStyle can reference them.
+		add_action( 'init', array( $this, 'register_block_assets' ), 5 );
+
 		// Hook: Frontend assets.
 		add_action( 'enqueue_block_assets', array( $this, 'enqueue_block_assets' ) );
 
@@ -140,6 +143,18 @@ class WP_Bootstrap_Blocks {
 
 		// check version number on each request
 		add_action( 'init', array( $this, 'check_version' ) );
+	}
+
+	/**
+	 * Register block assets so block.json editorStyle/style can reference them.
+	 */
+	public function register_block_assets() {
+		wp_register_style(
+			$this->token . '-editor-styles',
+			esc_url( $this->assets_url ) . 'index.css',
+			array( 'wp-edit-blocks' ),
+			self::$version
+		);
 	}
 
 	/**
@@ -197,14 +212,6 @@ class WP_Bootstrap_Blocks {
 				'isBootstrap5Active' => Settings::is_bootstrap_5_active(),
 				'isCssGridEnabled' => Settings::is_css_grid_enabled(),
 			)
-		);
-
-		// Styles.
-		wp_enqueue_style(
-			$this->token . '-editor-styles', // Handle.
-			esc_url( $this->assets_url ) . 'index.css', // Block editor CSS.
-			array( 'wp-edit-blocks' ), // Dependency to include the CSS after it.
-			self::$version
 		);
 	}
 

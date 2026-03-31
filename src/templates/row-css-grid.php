@@ -33,13 +33,6 @@
 $classes = array( 'wp-bootstrap-blocks-row', 'grid' );
 $styles = '';
 
-if ( array_key_exists( 'className', $attributes ) && ! empty( $attributes['className'] ) ) {
-	array_push( $classes, $attributes['className'] );
-}
-if ( array_key_exists( 'align', $attributes ) && 'full' === $attributes['align'] ) {
-	array_push( $classes, 'alignfull' );
-}
-
 if ( array_key_exists( 'noGutters', $attributes ) && $attributes['noGutters'] ) {
 	$styles = '--bs-gap: 0;';
 } elseif ( array_key_exists( 'cssGridGutters', $attributes ) && $attributes['cssGridGutters'] ) {
@@ -66,6 +59,12 @@ $classes = apply_filters( 'wp_bootstrap_blocks_row_css_grid_classes', $classes, 
  */
 $styles = apply_filters( 'wp_bootstrap_blocks_row_css_grid_styles', $styles, $attributes );
 ?>
-<div class="<?php echo esc_attr( implode( ' ', $classes ) ); ?>"<?php echo ! empty( $styles ) ? ' style="' . esc_attr( $styles ) . '"' : ''; ?>>
+<?php
+$wrapper_attrs = array( 'class' => implode( ' ', $classes ) );
+if ( ! empty( $styles ) ) {
+	$wrapper_attrs['style'] = $styles;
+}
+?>
+<div <?php echo get_block_wrapper_attributes( $wrapper_attrs ); ?>>
 	<?php echo $content; // phpcs:ignore ?>
 </div>

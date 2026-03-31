@@ -78,9 +78,6 @@ if ( \WP_Bootstrap_Blocks\Settings::is_bootstrap_5_active() ) {
 		array_push( $classes, 'col-xxl-' . $attributes['sizeXxl'] );
 	}
 }
-if ( array_key_exists( 'className', $attributes ) && ! empty( $attributes['className'] ) ) {
-	array_push( $classes, $attributes['className'] );
-}
 
 if ( array_key_exists( 'contentVerticalAlignment', $attributes ) && ! empty( $attributes['contentVerticalAlignment'] ) ) {
 	array_push( $column_content_classes, 'h-100' );
@@ -136,7 +133,7 @@ $classes = apply_filters( 'wp_bootstrap_blocks_column_classes', $classes, $attri
 $column_content_classes = apply_filters( 'wp_bootstrap_blocks_column_content_classes', $column_content_classes, $attributes );
 ?>
 
-<div class="<?php echo esc_attr( implode( ' ', $classes ) ); ?>">
+<div <?php echo get_block_wrapper_attributes( array( 'class' => implode( ' ', $classes ) ) ); ?>>
 	<?php if ( ! empty( $column_content_classes ) ) : ?>
 		<div class="<?php echo esc_attr( implode( ' ', $column_content_classes ) ); ?>">
 			<?php echo $content; // phpcs:ignore ?>

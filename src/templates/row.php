@@ -34,12 +34,6 @@
  */
 
 $classes = array( 'wp-bootstrap-blocks-row', 'row' );
-if ( array_key_exists( 'className', $attributes ) && ! empty( $attributes['className'] ) ) {
-	array_push( $classes, $attributes['className'] );
-}
-if ( array_key_exists( 'align', $attributes ) && 'full' === $attributes['align'] ) {
-	array_push( $classes, 'alignfull' );
-}
 
 if ( array_key_exists( 'noGutters', $attributes ) && $attributes['noGutters'] ) {
 	if ( \WP_Bootstrap_Blocks\Settings::is_bootstrap_5_active() ) {
@@ -88,6 +82,6 @@ if ( array_key_exists( 'verticalAlignment', $attributes ) ) {
  */
 $classes = apply_filters( 'wp_bootstrap_blocks_row_classes', $classes, $attributes );
 ?>
-<div class="<?php echo esc_attr( implode( ' ', $classes ) ); ?>">
+<div <?php echo get_block_wrapper_attributes( array( 'class' => implode( ' ', $classes ) ) ); ?>>
 	<?php echo $content; // phpcs:ignore ?>
 </div>

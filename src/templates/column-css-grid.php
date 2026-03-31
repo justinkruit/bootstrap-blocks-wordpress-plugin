@@ -58,9 +58,6 @@ if ( array_key_exists( 'sizeXl', $attributes ) && $attributes['sizeXl'] > 0 ) {
 if ( array_key_exists( 'sizeXxl', $attributes ) && $attributes['sizeXxl'] > 0 ) {
 	array_push( $classes, 'g-col-xxl-' . $attributes['sizeXxl'] );
 }
-if ( array_key_exists( 'className', $attributes ) && ! empty( $attributes['className'] ) ) {
-	array_push( $classes, $attributes['className'] );
-}
 
 if ( array_key_exists( 'contentVerticalAlignment', $attributes ) && ! empty( $attributes['contentVerticalAlignment'] ) ) {
 	array_push( $column_content_classes, 'h-100' );
@@ -116,7 +113,7 @@ $classes = apply_filters( 'wp_bootstrap_blocks_column_css_grid_classes', $classe
 $column_content_classes = apply_filters( 'wp_bootstrap_blocks_column_css_grid_content_classes', $column_content_classes, $attributes );
 ?>
 
-<div class="<?php echo esc_attr( implode( ' ', $classes ) ); ?>">
+<div <?php echo get_block_wrapper_attributes( array( 'class' => implode( ' ', $classes ) ) ); ?>>
 	<?php if ( ! empty( $column_content_classes ) ) : ?>
 		<div class="<?php echo esc_attr( implode( ' ', $column_content_classes ) ); ?>">
 			<?php echo $content; // phpcs:ignore ?>

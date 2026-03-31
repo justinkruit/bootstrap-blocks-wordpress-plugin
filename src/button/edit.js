@@ -15,6 +15,7 @@ import {
 	InspectorControls,
 	BlockControls,
 	AlignmentToolbar,
+	useBlockProps,
 } from '@wordpress/block-editor';
 import { bgColors, colors } from '../constants';
 
@@ -43,7 +44,6 @@ const NEW_TAB_REL_DEFAULT_VALUE = 'noreferrer noopener';
 
 const BootstrapButtonEdit = ( {
 	attributes,
-	className,
 	isSelected,
 	setAttributes,
 } ) => {
@@ -112,64 +112,64 @@ const BootstrapButtonEdit = ( {
 	}
 
 	return (
-		<>
-			<div
-				className={ className }
-				data-alignment={ alignment }
-				style={ inlineStyle }
-			>
-				<RichText
-					// eslint-disable-next-line @wordpress/i18n-ellipsis
-					placeholder={ __( 'Add text...', 'wp-bootstrap-blocks' ) }
-					value={ text }
-					onChange={ ( value ) => setAttributes( { text: value } ) }
-					allowedFormats={ [] }
-					keepPlaceholderOnFocus
-				/>
-				<InspectorControls>
-					<PanelBody>
-						<SelectControl
-							label={ __( 'Style', 'wp-bootstrap-blocks' ) }
-							value={ style }
-							options={ styleOptions }
-							onChange={ ( selectedStyle ) => {
-								setAttributes( { style: selectedStyle } );
-							} }
-						/>
-					</PanelBody>
-					<PanelBody
-						title={ __( 'Link settings', 'wp-bootstrap-blocks' ) }
-					>
-						<ToggleControl
-							label={ __(
-								'Open in new tab',
-								'wp-bootstrap-blocks'
-							) }
-							onChange={ onToggleOpenInNewTab }
-							checked={ linkTarget === '_blank' }
-						/>
-						<TextControl
-							label={ __( 'Link rel', 'wp-bootstrap-blocks' ) }
-							value={ rel || '' }
-							onChange={ ( newRel ) => {
-								setAttributes( { rel: newRel } );
-							} }
-						/>
-					</PanelBody>
-				</InspectorControls>
-				<BlockControls>
-					<AlignmentToolbar
-						value={ alignment }
+		<div
+			{ ...useBlockProps( {
+				'data-alignment': alignment,
+				'data-style': style,
+				style: inlineStyle,
+			} ) }
+		>
+			<RichText
+				// eslint-disable-next-line @wordpress/i18n-ellipsis
+				placeholder={ __( 'Add text...', 'wp-bootstrap-blocks' ) }
+				value={ text }
+				onChange={ ( value ) => setAttributes( { text: value } ) }
+				allowedFormats={ [] }
+				keepPlaceholderOnFocus
+			/>
+			<InspectorControls>
+				<PanelBody>
+					<SelectControl
+						label={ __( 'Style', 'wp-bootstrap-blocks' ) }
+						value={ style }
+						options={ styleOptions }
+						onChange={ ( selectedStyle ) => {
+							setAttributes( { style: selectedStyle } );
+						} }
+					/>
+				</PanelBody>
+				<PanelBody
+					title={ __( 'Link settings', 'wp-bootstrap-blocks' ) }
+				>
+					<ToggleControl
 						label={ __(
-							'Change button alignment',
+							'Open in new tab',
 							'wp-bootstrap-blocks'
 						) }
-						onChange={ ( newAlignment ) =>
-							setAttributes( { alignment: newAlignment } )
-						}
+						onChange={ onToggleOpenInNewTab }
+						checked={ linkTarget === '_blank' }
 					/>
-				</BlockControls>
-			</div>
+					<TextControl
+						label={ __( 'Link rel', 'wp-bootstrap-blocks' ) }
+						value={ rel || '' }
+						onChange={ ( newRel ) => {
+							setAttributes( { rel: newRel } );
+						} }
+					/>
+				</PanelBody>
+			</InspectorControls>
+			<BlockControls>
+				<AlignmentToolbar
+					value={ alignment }
+					label={ __(
+						'Change button alignment',
+						'wp-bootstrap-blocks'
+					) }
+					onChange={ ( newAlignment ) =>
+						setAttributes( { alignment: newAlignment } )
+					}
+				/>
+			</BlockControls>
 			{ isSelected && (
 				<form
 					className="wp-block-wp-bootstrap-blocks-button-link"
@@ -189,7 +189,7 @@ const BootstrapButtonEdit = ( {
 					/>
 				</form>
 			) }
-		</>
+		</div>
 	);
 };
 

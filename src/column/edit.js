@@ -15,6 +15,8 @@ import {
 	InspectorControls,
 	BlockControls,
 	AlignmentToolbar,
+	useBlockProps,
+	useInnerBlocksProps,
 } from '@wordpress/block-editor';
 
 import { isBootstrap5Active, isCssGridEnabled } from '../helper';
@@ -90,7 +92,6 @@ paddingOptions = applyFilters(
 
 const BootstrapColumnEdit = ( {
 	attributes,
-	className,
 	clientId,
 	setAttributes,
 } ) => {
@@ -127,6 +128,58 @@ const BootstrapColumnEdit = ( {
 			centerContent: false,
 		} );
 	}
+
+	// Compute data-size-* attributes (moved from getEditWrapperProps)
+	const wrapperProps = {
+		'data-size-xs':
+			equalWidthXxl ||
+			equalWidthXl ||
+			equalWidthLg ||
+			equalWidthMd ||
+			equalWidthSm ||
+			equalWidthXs
+				? 0
+				: sizeXs,
+		'data-size-sm':
+			equalWidthXxl ||
+			equalWidthXl ||
+			equalWidthLg ||
+			equalWidthMd ||
+			equalWidthSm
+				? 0
+				: sizeSm,
+		'data-size-md':
+			equalWidthXxl || equalWidthXl || equalWidthLg || equalWidthMd
+				? 0
+				: sizeMd,
+		'data-size-lg':
+			equalWidthXxl || equalWidthXl || equalWidthLg ? 0 : sizeLg,
+		'data-size-xl': equalWidthXxl || equalWidthXl ? 0 : sizeXl,
+		'data-size-xxl': equalWidthXxl ? 0 : sizeXxl,
+		'data-bg-color': bgColor,
+		'data-padding': padding,
+		'data-content-vertical-alignment': contentVerticalAlignment,
+	};
+
+	// Prepare styles for selected background-color
+	if ( bgColor ) {
+		const selectedBgColor = bgColorOptions.find(
+			( bgColorOption ) => bgColorOption.name === bgColor
+		);
+		if ( selectedBgColor ) {
+			wrapperProps.style = {
+				backgroundColor: selectedBgColor.color,
+			};
+		}
+	}
+
+	const blockProps = useBlockProps( wrapperProps );
+	const innerBlocksProps = useInnerBlocksProps( blockProps, {
+		templateLock: false,
+		renderAppender: hasChildBlocks
+			? undefined
+			: InnerBlocks.ButtonBlockAppender,
+	} );
 
 	return (
 		<>
@@ -327,16 +380,7 @@ const BootstrapColumnEdit = ( {
 					alignmentControls={ contentVerticalAlignmentControls }
 				/>
 			</BlockControls>
-			<div className={ className }>
-				<InnerBlocks
-					templateLock={ false }
-					renderAppender={
-						hasChildBlocks
-							? undefined
-							: () => <InnerBlocks.ButtonBlockAppender />
-					}
-				/>
-			</div>
+			<div { ...innerBlocksProps } />
 		</>
 	);
 };
