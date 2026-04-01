@@ -106,6 +106,8 @@ const BootstrapContainerEdit = ( {
 						onChange={ ( isChecked ) => {
 							setAttributes( { isFluid: isChecked } );
 						} }
+						__next40pxDefaultSize = { true }
+						__nextHasNoMarginBottom = { true }
 					/>
 					<SelectControl
 						label={ __(
@@ -124,6 +126,8 @@ const BootstrapContainerEdit = ( {
 							'Fluid breakpoints only work with Bootstrap v4.4+. The container will be 100% wide until the specified breakpoint is reached, after which max-widths for each of the higher breakpoints will be applied.',
 							'wp-bootstrap-blocks'
 						) }
+						__next40pxDefaultSize = { true }
+						__nextHasNoMarginBottom = { true }
 					/>
 				</PanelBody>
 				<PanelBody title={ __( 'Margin', 'wp-bootstrap-blocks' ) }>
@@ -136,6 +140,8 @@ const BootstrapContainerEdit = ( {
 								marginAfter: selectedMarginAfter,
 							} );
 						} }
+						__next40pxDefaultSize = { true }
+						__nextHasNoMarginBottom = { true }
 					/>
 				</PanelBody>
 			</InspectorControls>

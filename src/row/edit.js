@@ -400,6 +400,7 @@ const BootstrapRowEdit = ( {
 								editorStackColumns: isChecked,
 							} )
 						}
+						__nextHasNoMarginBottom = { true }
 					/>
 				</PanelBody>
 				<PanelBody
@@ -444,6 +445,7 @@ const BootstrapRowEdit = ( {
 						onChange={ ( isChecked ) =>
 							setAttributes( { noGutters: isChecked } )
 						}
+						__nextHasNoMarginBottom = { true }
 					/>
 					{ ! noGutters &&
 						( isCssGridEnabled() ? (
@@ -456,6 +458,8 @@ const BootstrapRowEdit = ( {
 										cssGridGutters: value,
 									} );
 								} }
+								__next40pxDefaultSize = { true }
+								__nextHasNoMarginBottom = { true }
 							/>
 						) : (
 							isBootstrap5Active() && (
@@ -472,6 +476,8 @@ const BootstrapRowEdit = ( {
 												horizontalGutters: value,
 											} );
 										} }
+										__next40pxDefaultSize = { true }
+										__nextHasNoMarginBottom = { true }
 									/>
 									<SelectControl
 										label={ __(
@@ -485,6 +491,8 @@ const BootstrapRowEdit = ( {
 												verticalGutters: value,
 											} );
 										} }
+										__next40pxDefaultSize = { true }
+										__nextHasNoMarginBottom = { true }
 									/>
 								</>
 							)

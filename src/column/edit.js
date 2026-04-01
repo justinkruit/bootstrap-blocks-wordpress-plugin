@@ -205,6 +205,7 @@ const BootstrapColumnEdit = ( {
 							onChange={ ( isChecked ) =>
 								setAttributes( { equalWidthXs: isChecked } )
 							}
+							__nextHasNoMarginBottom = { true }
 						/>
 					) }
 					<hr />
@@ -225,6 +226,7 @@ const BootstrapColumnEdit = ( {
 							onChange={ ( isChecked ) =>
 								setAttributes( { equalWidthSm: isChecked } )
 							}
+							__nextHasNoMarginBottom = { true }
 						/>
 					) }
 					<hr />
@@ -245,6 +247,7 @@ const BootstrapColumnEdit = ( {
 							onChange={ ( isChecked ) =>
 								setAttributes( { equalWidthMd: isChecked } )
 							}
+							__nextHasNoMarginBottom = { true }
 						/>
 					) }
 					<hr />
@@ -265,6 +268,7 @@ const BootstrapColumnEdit = ( {
 							onChange={ ( isChecked ) =>
 								setAttributes( { equalWidthLg: isChecked } )
 							}
+							__nextHasNoMarginBottom = { true }
 						/>
 					) }
 					<hr />
@@ -285,6 +289,7 @@ const BootstrapColumnEdit = ( {
 							onChange={ ( isChecked ) =>
 								setAttributes( { equalWidthXl: isChecked } )
 							}
+							__nextHasNoMarginBottom = { true }
 						/>
 					) }
 					{ isBootstrap5Active() && (
@@ -312,6 +317,7 @@ const BootstrapColumnEdit = ( {
 											equalWidthXxl: isChecked,
 										} )
 									}
+									__nextHasNoMarginBottom = { true }
 								/>
 							) }
 						</>
